@@ -5,7 +5,6 @@ export const TableContainer = styled.div`
   background: #ffffff;
   box-shadow: 0px 4px 30px rgba(192, 192, 192, 0.25);
   border-radius: 6px;
-  
   table {
     width: 100%;
     text-align: left;
@@ -19,7 +18,7 @@ export const TableContainer = styled.div`
         padding: ${cRem(15)} ${cRem(25)};
         font-weight: 500;
         font-size: 16px;
-        color: #333333;
+        color: #25213B;
         opacity: 0.5;
       }
       td {
@@ -27,11 +26,4 @@ export const TableContainer = styled.div`
       }
     }
   }
-`;
-
-export const HeaderStyle = styled.div`
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  gap: 5px;
 `;
