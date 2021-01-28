@@ -1,6 +1,7 @@
 
 import { useSortBy, useTable, useRowSelect } from "react-table";
 import { useRef, forwardRef, useEffect } from "react";
+import circleIcon from "../../assets/icons/svg/circle-arrow.svg";
 
 const IndeterminateCheckbox = forwardRef(
   ({ indeterminate, ...rest}, ref) => {
@@ -14,9 +15,11 @@ const IndeterminateCheckbox = forwardRef(
     return (
       <>
         <input type="checkbox" ref={resolvedRef} {...rest} />
-        <span>hello</span>
+        <span className="space">
+          <img src={circleIcon} alt="img"/>
+        </span>
       </>
-    )
+    );
   }
 )
 // eslint-disable-next-line import/no-anonymous-default-export
