@@ -72,20 +72,27 @@ function App() {
   const columns = useMemo(
     () => [
       {
-        Header: "Indicator",
-        accessor: "indicator",
+        Header: "NAME",
+        accessor: "name",
       },
       {
-        Header: "Baseline",
-        accessor: "baseline",
+        Header: "LOCATION",
+        accessor: "location",
       },
       {
-        Header: "Current",
-        accessor: "current",
+        Header: "STATUS",
+        accessor: "status",
       },
       {
-        Header: "Target",
-        accessor: "target",
+        Header: "ENTRIES",
+        accessor: "entries",
+      },
+      {
+        Header: "RISK PROFILE",
+        accessor: "riskprofile",
+      },{
+        Header: "",
+        accessor: "action",
       },
     ],
     []
@@ -93,28 +100,40 @@ function App() {
   const data = useMemo(
     () => [
       {
-        indicator: "Beneficiaries",
-        baseline: "Date",
-        current: "12,342,000",
+        name: "Beneficiaries",
+        location: "Date",
+        status: "12,342,000",
         target: "15,123,8344",
+        entries: "dd",
+        riskprofile: "rr",
+        action: "dd",
       },
       {
-        indicator: "Employment after N-Power",
-        baseline: "Date",
-        current: "12,342,000",
+        name: "Employment after N-Power",
+        location: "Date",
+        status: "12,342,000",
         target: "15,123,8344",
+        entries: "dd",
+        riskprofile: "rr",
+        action: "dd",
       },
       {
-        indicator: "People with Disability",
-        baseline: "Date",
-        current: "12,342,000",
+        name: "People with Disability",
+        location: "Date",
+        status: "12,342,000",
         target: "15,123,8344",
+        entries: "dd",
+        riskprofile: "rr",
+        action: "dd",
       },
       {
-        indicator: "People with Disability",
-        baseline: "Date",
-        current: "12,342,000",
+        name: "People with Disability",
+        location: "Date",
+        status: "12,342,000",
         target: "15,123,8344",
+        entries: "dd",
+        riskprofile: "rr",
+        action: "dd",
       },
     ],
     []
@@ -129,65 +148,66 @@ function App() {
           ))}
         </div>
 
-        <div className="dashboard-body">
-          <CardUserFlow headIcon={iconCastle} headText="Division Summary">
-            <ul className="user-info">
-              {userDetails.map((d) => (
-                <li key={d.item} className="listitem flex-item">
-                  <img src={d.icon} alt={d.icon} />
-                  <a
-                    href="#"
-                    className={cls({
-                      activelist: d.item === "2 Journal entries",
-                    })}
-                  >
-                    {d.item}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </CardUserFlow>
+        <div className="flex-item">
+          <div>
+            <CardUserFlow headIcon={iconCastle} headText="Division Summary">
+              <ul className="user-info">
+                {userDetails.map((d) => (
+                  <li key={d.item} className="listitem flex-item">
+                    <img src={d.icon} alt={d.icon} />
+                    <a
+                      href="#"
+                      className={cls({
+                        activelist: d.item === "2 Journal entries",
+                      })}
+                    >
+                      {d.item}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </CardUserFlow>
+            <CardUserFlow headIcon={iconSpeaker} headText="Module History">
+              <div id="timeline-content">
+                <ul className="timeline">
+                  <li className="event">
+                    <h3>Searched “Journal Entries” on Division module</h3>
+                    <p>
+                      22:10 15/09/2020{" "}
+                      <span>
+                        <img src={elipse} alt="elipse" />
+                      </span>{" "}
+                      Web
+                    </p>
+                  </li>
+                  <li className="event">
+                    <h3>Searched “Fingerprint record” on Division module</h3>
+                    <p>
+                      22:10 15/09/2020{" "}
+                      <span>
+                        <img src={elipse} alt="elipse" />
+                      </span>{" "}
+                      Web
+                    </p>
+                  </li>
+                  <li className="event">
+                    <h3>Searched “Journal Entries” on Division module</h3>
+                    <p>
+                      22:10 15/09/2020{" "}
+                      <span>
+                        <img src={elipse} alt="elipse" />
+                      </span>{" "}
+                      Web
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </CardUserFlow>
+          </div>
 
           <TableContainer>
             <Table columns={columns} data={data} rowNumber={20} check></Table>
           </TableContainer>
-
-          <CardUserFlow headIcon={iconSpeaker} headText="Module History">
-            <div id="timeline-content">
-              <ul className="timeline">
-                <li className="event">
-                  <h3>Searched “Journal Entries” on Division module</h3>
-                  <p>
-                    22:10 15/09/2020{" "}
-                    <span>
-                      <img src={elipse} alt="elipse" />
-                    </span>{" "}
-                    Web
-                  </p>
-                </li>
-                <li className="event">
-                  <h3>Searched “Fingerprint record” on Division module</h3>
-                  <p>
-                    22:10 15/09/2020{" "}
-                    <span>
-                      <img src={elipse} alt="elipse" />
-                    </span>{" "}
-                    Web
-                  </p>
-                </li>
-                <li className="event">
-                  <h3>Searched “Journal Entries” on Division module</h3>
-                  <p>
-                    22:10 15/09/2020{" "}
-                    <span>
-                      <img src={elipse} alt="elipse" />
-                    </span>{" "}
-                    Web
-                  </p>
-                </li>
-              </ul>
-            </div>
-          </CardUserFlow>
         </div>
       </DashboardBody>
     </div>
