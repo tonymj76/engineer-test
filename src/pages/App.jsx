@@ -1,9 +1,13 @@
+import DashboardBody from "../components/DashboardBody";
 import TopNavBar from "../components/TopNavBar";
+
 
 function App() {
   return (
     <div>
-      <TopNavBar></TopNavBar>
+      <TopNavBar />
+      <DashboardBody>
+      </DashboardBody>
     </div>
   );
 }
