@@ -1,3 +1,8 @@
+$dotborder: 4px;
+$dot: 9px;
+$line: 1px;
+$radius: 4px;
+
 .dashboard {
   display: grid;
   grid-template-columns: minmax(calculateRem(226px), auto);
@@ -8,7 +13,7 @@
 .dashboard-body{
   display: grid;
   grid-template-columns: calculateRem(226px) 1fr;
-  grid-template-rows: auto;
+  grid-template-rows: minmax(350px, auto) ;
   gap: calculateRem(24px);
 }
 .card-container{
@@ -40,6 +45,7 @@
   background: #FFFFFF;
   box-shadow: 0px 4px 30px rgba(192, 192, 192, 0.25);
   border-radius: 6px;
+  height: 300px;
   .header {
     align-items: center;
     padding: calculateRem(10px);
@@ -81,3 +87,52 @@
   
 }
 
+.timeline{
+  
+  border-bottom-right-radius: $radius;
+  border-top-right-radius: $radius;
+  position: relative;
+  text-align: left;
+  list-style: none;
+  margin-left: 12px;
+  .event{
+     padding-left: 12px;
+     border-left: $line dashed #C4C4C4;
+     position: relative;
+     h3{
+       font-weight: bold;
+       font-size: 12px;
+       color: #747474;
+       padding-bottom: 10px;
+     }
+     p{
+       font-weight: bold;
+       font-size: 12px;
+       line-height: 140%;
+       color: #A1AACE;
+       padding-bottom: 20px;
+       span{
+         padding: 0 2px;
+       }
+     }
+     &:last-child {
+       padding-bottom: 22px;
+       border-left: none;
+     }
+     &:before,
+     &:after {
+       position: absolute;
+       display: block;
+       top: 0;
+     }
+     &:after{
+       background: #707070;
+       border-radius: 50%;
+       height: $dot;
+       width: $dot;
+       left: -5px;
+       content: "";
+       top: 5px;
+     }
+  }
+}
