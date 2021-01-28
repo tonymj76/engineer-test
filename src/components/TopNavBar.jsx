@@ -1,4 +1,8 @@
 import Logo from '../assets/icons/svg/logo.svg';
+import DoorBell from '../assets/icons/svg/icon-doorbell.svg';
+import UserIcon from '../assets/icons/svg/usericon.svg';
+import ArrowDown from '../assets/icons/svg/arrow-down.svg';
+import SearchIcon from '../assets/icons/svg/search.svg';
 export default function TopNavBar() {
   return (
     <div>
@@ -12,12 +16,17 @@ export default function TopNavBar() {
             <li>now</li>
           </ul>
         </div>
-        <div className="custom-nav-actions">
-          <div className="search">
-            search
+        <div className="custom-nav-actions flex-item">
+          <input type="text" className="search" />
+          <div className="bell">
+            <img src={DoorBell} alt="Bell-icon" />
           </div>
-          <div className="bell"></div>
-          <div className="avatar"></div>
+          <div className="avatar">
+            <img src={UserIcon} alt="user-icon"/>
+          </div>
+          <div className="direction">
+            <img src={ArrowDown} alt="arrow down"/>
+          </div>
         </div>
       </nav>
     </div>
