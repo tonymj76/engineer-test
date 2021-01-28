@@ -4,7 +4,7 @@ import { useRef, forwardRef, useEffect } from "react";
 import circleIcon from "../../assets/icons/svg/circle-arrow.svg";
 
 const IndeterminateCheckbox = forwardRef(
-  ({ indeterminate, ...rest}, ref) => {
+  ({ indeterminate, bodycell, ...rest}, ref) => {
     const defaultRef = useRef()
     const resolvedRef = ref || defaultRef
 
@@ -15,9 +15,10 @@ const IndeterminateCheckbox = forwardRef(
     return (
       <>
         <input type="checkbox" ref={resolvedRef} {...rest} />
-        <span className="space">
+        {bodycell && (<span className="space">
           <img src={circleIcon} alt="img"/>
-        </span>
+        </span>)}
+        
       </>
     );
   }
@@ -51,7 +52,7 @@ export default ({columns, data, rowNumber, check}) => {
           ),
           Cell: ({ row }) => (
             <div>
-              <IndeterminateCheckbox {...row.getToggleRowSelectedProps()} />
+              <IndeterminateCheckbox {...row.getToggleRowSelectedProps()} bodycell/>
             </div>
           ),
         },
@@ -91,7 +92,9 @@ export default ({columns, data, rowNumber, check}) => {
             return (
               <tr {...row.getRowProps()}>
                 {row.cells.map((cell) => (
-                  <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
+                  <td {...cell.getCellProps()}>
+                    {cell.render("Cell")}
+                  </td>
                 ))}
               </tr>
             );
