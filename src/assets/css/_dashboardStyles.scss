@@ -1,5 +1,3 @@
-
-
 /*
   TopNav Bar Style
   padding: calculateRem(26px) calculateRem(10.23px) calculateRem(6px) calculateRem(14.74px);
@@ -35,6 +33,35 @@ $layout-padding: 26px;
 
     li {
       padding-right: calculateRem($nav-padding);
+    }
+  }
+  
+  &-actions{
+    align-items: center;
+    .bell,
+    .avatar {
+      margin-left: calculateRem(32.18px);
+    }
+    .avatar {
+      background-color: #D8D8D8;
+      height: 36px;
+      width: 36px;
+      border-radius: 100%;
+      padding: 6px;
+      img {
+        padding-top: 3px;
+        padding-left: 4px;
+      }
+    }
+    .direction{
+      margin-left: calculateRem(7px);
+    }
+
+    .search {
+      background: #FFFFFF;
+      border: 1px solid #DCE1E7;
+      box-sizing: border-box;
+      border-radius: 4px;
     }
   }
 
