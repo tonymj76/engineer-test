@@ -1,0 +1,53 @@
+@mixin font($font-faminly, $font-file, $font-weight:normal, $font-style:normal) {
+  @font-face {
+    font-family: $font-faminly;
+    src: url($font-file+'.eot');
+    src: url($font-file+'.eot?#iefix') format('embedded-opentype'),
+      url($font-file+'.woff') format('woff'),
+      url($font-file+'.woff2') format('woff2'),
+      url($font-file+'.ttf') format('truetype'),
+      url($font-file+'.svg#aller') format('svg');
+    font-weight: $font-weight;
+    font-style: $font-style;
+  }
+}
+
+
+
+@include font('ProductSans', '../font/ProductSans-Regular');
+
+$custom-font: (mon: 'Montserrat',
+  pro: 'ProductSans',
+);
+
+@function givefont($font-name) {
+  $holder: map-get($map: $custom-font, $key: $font-name);
+  $font-full-name: $holder, Lato, Arial, Helvetica, sans-serif !default;
+  @return $font-full-name;
+}
+
+// Responsive
+$responsive: (desktop: 75em,
+  min_desktop: 62em,
+  tab: 48em,
+  min_tab:36em);
+
+@mixin responsive($size) {
+  @media (min-width: $size) {
+    @content;
+  }
+}
+
+@function resp($resp-size) {
+  @return map-get($map: $responsive, $key: $resp-size);
+}
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return #{$remSize}rem;
+}
+
+@mixin fontSize($size) {
+  font-size: $size ; //Fallback in px
+  font-size: calculateRem($size) ;
+}

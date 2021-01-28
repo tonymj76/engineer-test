@@ -1,0 +1,41 @@
+
+
+/*
+  TopNav Bar Style
+  padding: calculateRem(26px) calculateRem(10.23px) calculateRem(6px) calculateRem(14.74px);
+*/
+$nav-padding: 10px;
+$layout-padding: 26px;
+
+.flex-item {
+  display: flex;
+}
+
+.custom-nav{
+  display: flex;
+  width: 100%;
+  height: calculateRem(52px);
+  padding: 0 calculateRem($layout-padding) calculateRem(6px);
+  background: #FFFFFF;
+  box-shadow: inset 0px -1px 0px rgba(220, 225, 231, 0.572143);
+  gap: 6px;
+  justify-content: space-between;
+  align-items: center;
+
+  &-logo{
+    align-items: center;
+    p{
+      // line-height: 22px;
+      font-weight: bold;
+      padding-right: calculateRem(50px);
+    }
+  }
+  &-list{
+    list-style: none;
+
+    li {
+      padding-right: calculateRem($nav-padding);
+    }
+  }
+
+}
