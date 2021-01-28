@@ -11,6 +11,9 @@ import envelope from "../assets/icons/svg/envelope.svg";
 import elipse from "../assets/icons/svg/elipse.svg";
 import n from "../assets/icons/svg/n.svg";
 import cls from "classnames";
+import Table from "../components/Table/table.component";
+import { TableContainer } from "../components/Table/table.style";
+
 
 import { useMemo } from "react";
 
@@ -66,19 +69,52 @@ function App() {
     ],
     []
   );
-  const userTimeline = useMemo(
+  const columns = useMemo(
     () => [
       {
-        item: "",
-        subText: "22:10 15/09/2020 <span>.</span> Web ",
+        Header: "Indicator",
+        accessor: "indicator",
       },
       {
-        item: "",
-        subText: "",
+        Header: "Baseline",
+        accessor: "baseline",
       },
       {
-        item: "Searched “Journal Entries” on Division module",
-        subText: "22:10 15/09/2020 <span>.</span> Web",
+        Header: "Current",
+        accessor: "current",
+      },
+      {
+        Header: "Target",
+        accessor: "target",
+      },
+    ],
+    []
+  );
+  const data = useMemo(
+    () => [
+      {
+        indicator: "Beneficiaries",
+        baseline: "Date",
+        current: "12,342,000",
+        target: "15,123,8344",
+      },
+      {
+        indicator: "Employment after N-Power",
+        baseline: "Date",
+        current: "12,342,000",
+        target: "15,123,8344",
+      },
+      {
+        indicator: "People with Disability",
+        baseline: "Date",
+        current: "12,342,000",
+        target: "15,123,8344",
+      },
+      {
+        indicator: "People with Disability",
+        baseline: "Date",
+        current: "12,342,000",
+        target: "15,123,8344",
       },
     ],
     []
@@ -112,7 +148,9 @@ function App() {
             </ul>
           </CardUserFlow>
 
-          <div className="table"></div>
+          <TableContainer>
+            <Table columns={columns} data={data} rowNumber={20} check></Table>
+          </TableContainer>
 
           <CardUserFlow headIcon={iconSpeaker} headText="Module History">
             <div id="timeline-content">
@@ -120,19 +158,31 @@ function App() {
                 <li className="event">
                   <h3>Searched “Journal Entries” on Division module</h3>
                   <p>
-                    22:10 15/09/2020 <span><img src={elipse} alt="elipse"/></span> Web
+                    22:10 15/09/2020{" "}
+                    <span>
+                      <img src={elipse} alt="elipse" />
+                    </span>{" "}
+                    Web
                   </p>
                 </li>
                 <li className="event">
                   <h3>Searched “Fingerprint record” on Division module</h3>
                   <p>
-                    22:10 15/09/2020 <span><img src={elipse} alt="elipse"/></span> Web
+                    22:10 15/09/2020{" "}
+                    <span>
+                      <img src={elipse} alt="elipse" />
+                    </span>{" "}
+                    Web
                   </p>
                 </li>
                 <li className="event">
                   <h3>Searched “Journal Entries” on Division module</h3>
                   <p>
-                    22:10 15/09/2020 <span><img src={elipse} alt="elipse"/></span> Web
+                    22:10 15/09/2020{" "}
+                    <span>
+                      <img src={elipse} alt="elipse" />
+                    </span>{" "}
+                    Web
                   </p>
                 </li>
               </ul>
