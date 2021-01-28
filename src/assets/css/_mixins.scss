@@ -48,6 +48,6 @@ $responsive: (desktop: 75em,
 }
 
 @mixin fontSize($size) {
-  font-size: $size ; //Fallback in px
-  font-size: calculateRem($size) ;
+  font-size: $size !important ; //Fallback in px
+  font-size: calculateRem($size) !important ;
 }
