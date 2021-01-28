@@ -2,7 +2,9 @@ $dotborder: 4px;
 $dot: 9px;
 $line: 1px;
 $radius: 4px;
-
+.space{
+  padding-left: calculateRem(23px);
+}
 .dashboard {
   display: grid;
   grid-template-columns: minmax(calculateRem(226px), auto);
@@ -11,10 +13,8 @@ $radius: 4px;
   row-gap: calculateRem(24px);
 }
 .dashboard-body{
-  display: grid;
-  grid-template-columns: calculateRem(226px) 1fr;
-  grid-template-rows: minmax(350px, auto) ;
-  gap: calculateRem(24px);
+  
+  
 }
 .card-container{
   justify-content: space-between;
@@ -44,8 +44,9 @@ $radius: 4px;
 .card-holder{
   background: #FFFFFF;
   box-shadow: 0px 4px 30px rgba(192, 192, 192, 0.25);
+  width: calculateRem(226px);
+  margin-right: calculateRem(26px);
   border-radius: 6px;
-  height: 300px;
   .header {
     align-items: center;
     padding: calculateRem(10px);
