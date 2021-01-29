@@ -14,7 +14,9 @@ $sizecard: 258px;
 
 .risk {
   align-items: center;
-  padding: 4px;
+}
+.img-risk {
+  padding-right: 11px;
 }
 .mid-risk{
   font-weight: 500;
@@ -29,7 +31,6 @@ $sizecard: 258px;
   font-size: 14px;
   color: #3AB65C;
 }
-
 .noStatus{
   padding: 2px 0;
   width: 89px;
@@ -48,7 +49,6 @@ $sizecard: 258px;
   font-weight: bold;
   color: #F4B400;
   background: #FFF6DE;
-
 }
 
 .entries{

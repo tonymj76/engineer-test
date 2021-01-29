@@ -2,8 +2,6 @@
 import Notification from "../assets/icons/svg/notification.svg";
 
 export default function Cards({num, item}) {
-  
-  
   return (
     <div className="card flex-item">
       <div className="card-info">

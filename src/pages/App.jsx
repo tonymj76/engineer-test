@@ -108,23 +108,27 @@ function App() {
           <div
             className={
               value === "Mid Risk"
-                ? "mid-risk risk flex-item"
+                ? "mid-risk"
                 : value === "Low Risk"
-                ? "low-risk risk flex-item"
-                : "high-risk risk flex-item"
+                ? "low-risk"
+                : "high-risk"
             }
           >
-            <img
-              src={
-                value === "Mid Risk"
-                  ? midrisk
-                  : value === "Low Risk"
-                  ? lowrisk
-                  : highrisk
-              }
-              alt="status risk"
-            />
-            <p>{value}</p>
+            <div className="risk flex-item">
+              <img
+                src={
+                  value === "Mid Risk"
+                    ? midrisk
+                    : value === "Low Risk"
+                    ? lowrisk
+                    : highrisk
+                }
+                alt="status risk"
+                className="img-risk"
+              />
+              <p className="risk-text">{value}</p>
+
+            </div>
           </div>
         ),
       },
@@ -250,30 +254,30 @@ function App() {
                   <li className="event">
                     <h3>Searched “Journal Entries” on Division module</h3>
                     <p>
-                      22:10 15/09/2020{" "}
+                      22:10 15/09/2020
                       <span>
                         <img src={elipse} alt="elipse" />
-                      </span>{" "}
+                      </span>
                       Web
                     </p>
                   </li>
                   <li className="event">
                     <h3>Searched “Fingerprint record” on Division module</h3>
                     <p>
-                      22:10 15/09/2020{" "}
+                      22:10 15/09/2020
                       <span>
                         <img src={elipse} alt="elipse" />
-                      </span>{" "}
+                      </span>
                       Web
                     </p>
                   </li>
                   <li className="event">
                     <h3>Searched “Journal Entries” on Division module</h3>
                     <p>
-                      22:10 15/09/2020{" "}
+                      22:10 15/09/2020
                       <span>
                         <img src={elipse} alt="elipse" />
-                      </span>{" "}
+                      </span>
                       Web
                     </p>
                   </li>
