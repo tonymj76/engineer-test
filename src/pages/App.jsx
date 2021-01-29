@@ -237,7 +237,7 @@ function App() {
                   <li key={d.item} className="listitem flex-item">
                     <img src={d.icon} alt={d.icon} />
                     <a
-                      href="#"
+                      href="//#endregion"
                       className={cls({
                         activelist: d.item === "2 Journal entries",
                       })}
