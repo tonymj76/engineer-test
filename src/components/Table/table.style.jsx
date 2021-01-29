@@ -19,23 +19,22 @@ export const TableContainer = styled.div`
     }
     tbody{
       tr{
-      background: #FFFFFF;
-      box-shadow: inset 0px -1px 0px rgba(183, 183, 183, 0.25);
-    }
+        background: #FFFFFF;
+        box-shadow: inset 0px -1px 0px rgba(183, 183, 183, 0.25);
+      }
     }
     
-      th,
-      td {
-        padding: ${cRem(15)} ${cRem(25)};
-      }
-      th {
-        color: #899198;
-        font-weight: 500;
-        font-size: 12px;
-      }
-      td{
-        color: #25213B;
-      }
+    th,
+    td {
+      padding: ${cRem(15)} ${cRem(25)};
+    }
+    th {
+      color: #899198;
+      font-weight: 500;
+      font-size: 12px;
+    }
+    td{
+      color: #25213B;
     }
   }
 `;

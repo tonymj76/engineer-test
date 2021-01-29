@@ -32,8 +32,6 @@ export default ({columns, data, rowNumber, check}) => {
     headerGroups,
     rows,
     prepareRow,
-    selectedFlatRows,
-    state: {selectedRowIds}
   } = useTable(
     {
       columns,
