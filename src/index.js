@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom';
 import './assets/css/index.scss';
 import App from './pages/App';
 import reportWebVitals from './reportWebVitals';
-
+import {QueryClientProvider, QueryClient} from 'react-query';
+const querryClient = new QueryClient();
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <QueryClientProvider client={querryClient}>
+      <App />
+    </QueryClientProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
