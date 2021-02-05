@@ -182,7 +182,6 @@ $newSizeCard: 18.5%;
 }
 
 .timeline{
-  
   border-bottom-right-radius: $radius;
   border-top-right-radius: $radius;
   position: relative;
@@ -191,6 +190,7 @@ $newSizeCard: 18.5%;
   margin-left: 12px;
   .event{
      padding-left: 12px;
+     padding-right: 2px;
      border-left: $line dashed #C4C4C4;
      position: relative;
      h3{
