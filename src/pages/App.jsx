@@ -13,11 +13,11 @@ import n from "../assets/icons/svg/n.svg";
 import cls from "classnames";
 import Table from "../components/Table/table.component";
 import { TableContainer } from "../components/Table/table.style";
-import ActionIcon from '../assets/icons/svg/actionicon.svg';
 import highrisk from '../assets/icons/svg/highrisk-arrow.svg';
 import midrisk from '../assets/icons/svg/midrisk-arrow.svg';
 import lowrisk from '../assets/icons/svg/lowrisk-arrow.svg';
 import { useMemo } from "react";
+import {TableData} from '../service/tableData';
 
 const cardDetails = () => [
     {
@@ -66,8 +66,16 @@ const userDetails =
   ]
 
 function App() {
+  const {data: tableDate, isLoading} = TableData();
   const columns = useMemo(
     () => [
+      {
+        Header: "",
+        accessor: "check",
+        Cell: ({ cell: { value } }) => (
+          <img src={value} alt="check" />
+        ),
+      },
       {
         Header: "NAME",
         accessor: "name",
@@ -127,7 +135,6 @@ function App() {
                 className="img-risk"
               />
               <p className="risk-text">{value}</p>
-
             </div>
           </div>
         ),
@@ -144,81 +151,7 @@ function App() {
     ],
     []
   );
-  const data = useMemo(
-    () => [
-      {
-        name: "Courtney Henry",
-        location: { state: "Lagos state", addr: "775 Rolling Green Rd." },
-        status: "No Issues",
-        entries: { name: "19 Unique Entries", type: "Homogenous" },
-        riskprofile: "Low Risk",
-        action: ActionIcon,
-      },
-      {
-        name: "Darrell Steward",
-        location: { state: "Lagos state", addr: "7529 E. Pecan St." },
-        status: "2 Issues found",
-        entries: { name: "10 Unique Entries", type: "Heterogenous" },
-        riskprofile: "Mid Risk",
-        action: ActionIcon,
-      },
-      {
-        name: "Cody Fisher",
-        location: { state: "Lagos state", addr: "3605 Parker Rd." },
-        status: "No Issues",
-        entries: {
-          name: "8 Unique Entries8",
-          type: "Homogenous",
-        },
-        riskprofile: "Mid Risk",
-        action: ActionIcon,
-      },
-      {
-        name: "Bessie Cooper",
-        location: { state: "Lagos state", addr: "775 Rolling Green Rd." },
-        status: "1 Issue found",
-        entries: { name: "12 Unique Entries", type: "Heterogenous" },
-        riskprofile: "High Risk",
-        action: ActionIcon,
-      },
-      {
-        name: "Annette Black",
-        location: { state: "Lagos state", addr: "8080 Railroad St." },
-        status: "No Issues",
-        entries: { name: "13 Unique Entries", type: "Heterogenous" },
-        riskprofile: "Low Risk",
-        action: ActionIcon,
-      },
-      {
-        name: "Jenny Wilson",
-        location: { state: "Lagos state", addr: "8080 Railroad St." },
-        status: "5 Issue found",
-        entries: { name: "12 Unique Entries", type: "Homogenous" },
-        riskprofile: "High Risk",
-        action: ActionIcon,
-      },
-      {
-        name: "Darlene Robertson",
-        location: { state: "Lagos state", addr: "3890 Poplar Dr." },
-        status: "2 Issue found",
-        entries: {
-          name: "6 Unique Entries8",
-          type: "Homogenous",
-        },
-        riskprofile: "Mid Risk",
-        action: ActionIcon,
-      },
-      {
-        name: "Ralph Edwards",
-        location: { state: "Lagos state", addr: "8558 Green Rd." },
-        status: "No Issues",
-        entries: { name: "14 Unique Entries", type: "Homogenous" },
-        riskprofile: "Low Risk",
-        action: ActionIcon,
-      },
-    ],
-    []
-  );
+  const data = useMemo(() => tableDate, [tableDate]);
   return (
     <div>
       <TopNavBar />
@@ -287,7 +220,11 @@ function App() {
           </div>
 
           <TableContainer>
-            <Table columns={columns} data={data} rowNumber={20} check></Table>
+            {isLoading ? (
+              ""
+            ) : (
+              <Table columns={columns} data={data} rowNumber={20} check></Table>
+            )}
           </TableContainer>
         </div>
       </DashboardBody>
