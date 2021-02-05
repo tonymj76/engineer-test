@@ -163,7 +163,7 @@ function App() {
         </div>
 
         <div className="description-body flex-item">
-          <div>
+          <div className="side-card-group">
             <CardUserFlow headIcon={iconCastle} headText="Division Summary">
               <ul className="user-info">
                 {userDetails().map((d) => (
