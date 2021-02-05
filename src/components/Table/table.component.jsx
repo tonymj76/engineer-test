@@ -1,7 +1,7 @@
 
 import { useSortBy, useTable, useRowSelect } from "react-table";
 import { useRef, forwardRef, useEffect } from "react";
-import circleIcon from "../../assets/icons/svg/circle-arrow.svg";
+
 
 const IndeterminateCheckbox = forwardRef(
   ({ indeterminate, bodycell, ...rest}, ref) => {
@@ -15,10 +15,6 @@ const IndeterminateCheckbox = forwardRef(
     return (
       <>
         <input type="checkbox" ref={resolvedRef} {...rest} />
-        {bodycell && (<span className="space">
-          <img src={circleIcon} alt="img"/>
-        </span>)}
-        
       </>
     );
   }
