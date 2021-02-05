@@ -3,9 +3,14 @@ $dot: 9px;
 $line: 1px;
 $radius: 4px;
 $sizecard: 258px;
+$newSizeCard: 18.5%;
 
 .description-body {
   padding-bottom: 15px;
+  justify-content: space-between;
+  .side-card-group {
+    flex-basis: $newSizeCard;
+  }
 }
 
 .space{
@@ -113,8 +118,8 @@ $sizecard: 258px;
   background: #FFFFFF;
   box-shadow: 0px 4px 30px rgba(192, 192, 192, 0.25);
   border-radius: 6px;
-  height: calculateRem(113px);
-  width: calculateRem($sizecard);
+  // height: calculateRem(113px);
+  flex-basis: $newSizeCard;
   padding: calculateRem(11px);
   padding-left: calculateRem(17px);
   &-number{
@@ -130,11 +135,10 @@ $sizecard: 258px;
     color: #9696A0;
   }
 }
+
 .card-holder{
   background: #FFFFFF;
   box-shadow: 0px 4px 30px rgba(192, 192, 192, 0.25);
-  width: calculateRem($sizecard);
-  margin-right: calculateRem(42px);
   border-radius: 6px;
   .header {
     align-items: center;
