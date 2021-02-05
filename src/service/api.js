@@ -8,5 +8,3 @@ const axiosCall = axios.create({
 })
 
 export default axiosCall;
-
-
